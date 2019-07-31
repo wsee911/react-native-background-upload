@@ -258,7 +258,7 @@ public class UploaderModule extends ReactContextBaseJavaModule {
           notificationConfig.getCancelled().message = notification.getString("onCancelledMessage");
         }
 
-        request.setNotificationConfig(notificationConfig);
+        // request.setNotificationConfig(notificationConfig);
 
       }
 
