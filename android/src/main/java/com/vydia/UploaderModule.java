@@ -210,9 +210,9 @@ public class UploaderModule extends ReactContextBaseJavaModule {
         .setMaxRetries(2)
         .setDelegate(statusDelegate);
 
-      // if (notification.getBoolean("enabled")) {
+      if (notification.getBoolean("enabled")) {
 
-      //   UploadNotificationConfig notificationConfig = new UploadNotificationConfig();
+        UploadNotificationConfig notificationConfig = new UploadNotificationConfig();
 
       //   if (notification.hasKey("notificationChannel")){
       //     notificationConfig.setNotificationChannelId(notification.getString("notificationChannel"));
@@ -258,9 +258,9 @@ public class UploaderModule extends ReactContextBaseJavaModule {
       //     notificationConfig.getCancelled().message = notification.getString("onCancelledMessage");
       //   }
 
-      //   request.setNotificationConfig(notificationConfig);
+        request.setNotificationConfig(notificationConfig);
 
-      // }
+      }
 
       if (options.hasKey("parameters")) {
         if (requestType.equals("raw")) {
