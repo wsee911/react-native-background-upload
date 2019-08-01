@@ -213,8 +213,8 @@ public class UploaderModule extends ReactContextBaseJavaModule {
 
         UploadNotificationConfig notificationConfig = new UploadNotificationConfig();
 
-        notificationConfig.setAutoClearOnSuccess(true);
-        
+        notificationConfig.getCompleted().autoClear = true;
+
         request.setNotificationConfig(notificationConfig);
       }
 
