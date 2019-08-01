@@ -213,14 +213,15 @@ public class UploaderModule extends ReactContextBaseJavaModule {
       if (notification.getBoolean("enabled")) {
 
         UploadNotificationConfig notificationConfig = new UploadNotificationConfig();
+        notificationConfig.setAutoClearOnSuccess(true);
 
       //   if (notification.hasKey("notificationChannel")){
       //     notificationConfig.setNotificationChannelId(notification.getString("notificationChannel"));
       //   }
 
-        if (notification.hasKey("autoClear") && notification.getBoolean("autoClear")){
-          notificationConfig.getCompleted().autoClear = true;
-        }
+        // if (notification.hasKey("autoClear") && notification.getBoolean("autoClear")){
+        //   notificationConfig.getCompleted().autoClear = true;
+        // }
 
       //   if (notification.hasKey("enableRingTone") && notification.getBoolean("enableRingTone")){
       //     notificationConfig.setRingToneEnabled(true);
