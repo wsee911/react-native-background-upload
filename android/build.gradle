@@ -35,6 +35,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    compile 'com.facebook.react:react-native:+'
-    compile 'net.gotev:uploadservice-okhttp:3.4.2'
+    implementation 'com.facebook.react:react-native:+'
+    implementation 'net.gotev:uploadservice-okhttp:3.4.2'
+    implementation 'androidx.annotation:annotation:1.0.0'
 }
