@@ -1,7 +1,6 @@
 package com.vydia.RNUploader;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.webkit.MimeTypeMap;
 
@@ -49,7 +48,7 @@ public class UploaderModule extends ReactContextBaseJavaModule {
   /*
   Sends an event to the JS module.
    */
-  private void sendEvent(String eventName, @Nullable WritableMap params) {
+  private void sendEvent(String eventName, WritableMap params) {
     this.getReactApplicationContext().getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class).emit("RNFileUploader-" + eventName, params);
   }
 
@@ -214,53 +213,9 @@ public class UploaderModule extends ReactContextBaseJavaModule {
 
         UploadNotificationConfig notificationConfig = new UploadNotificationConfig();
 
-        if (notification.hasKey("notificationChannel")){
-          notificationConfig.setNotificationChannelId(notification.getString("notificationChannel"));
-        }
-
         notificationConfig.setAutoClearOnSuccess(true);
-        // if (notification.hasKey("autoClear") && notification.getBoolean("autoClear")){
-        //   notificationConfig.getCompleted().autoClear = true;
-        // }
-
-      //   if (notification.hasKey("enableRingTone") && notification.getBoolean("enableRingTone")){
-      //     notificationConfig.setRingToneEnabled(true);
-      //   }
-
-      //   if (notification.hasKey("onCompleteTitle")) {
-      //     notificationConfig.getCompleted().title = notification.getString("onCompleteTitle");
-      //   }
-
-      //   if (notification.hasKey("onCompleteMessage")) {
-      //     notificationConfig.getCompleted().message = notification.getString("onCompleteMessage");
-      //   }
-
-      //   if (notification.hasKey("onErrorTitle")) {
-      //     notificationConfig.getError().title = notification.getString("onErrorTitle");
-      //   }
-
-      //   if (notification.hasKey("onErrorMessage")) {
-      //     notificationConfig.getError().message = notification.getString("onErrorMessage");
-      //   }
-
-      //   if (notification.hasKey("onProgressTitle")) {
-      //     notificationConfig.getProgress().title = notification.getString("onProgressTitle");
-      //   }
-
-      //   if (notification.hasKey("onProgressMessage")) {
-      //     notificationConfig.getProgress().message = notification.getString("onProgressMessage");
-      //   }
-
-      //   if (notification.hasKey("onCancelledTitle")) {
-      //     notificationConfig.getCancelled().title = notification.getString("onCancelledTitle");
-      //   }
-
-      //   if (notification.hasKey("onCancelledMessage")) {
-      //     notificationConfig.getCancelled().message = notification.getString("onCancelledMessage");
-      //   }
-
+        
         request.setNotificationConfig(notificationConfig);
-
       }
 
       if (options.hasKey("parameters")) {
